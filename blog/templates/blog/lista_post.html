@@ -3,7 +3,7 @@
 {% block content %}
 {% for post in posts %}
 
-<div>
+<div class="post">
     <p>Publicado: {{post.fecha_publicado}}</p>
     <h2><a href="{% url 'post_detalle' pk=post.pk %}">{{post.titulo}}</a></h2>
     <p>{{post.texto | linebreaksbr}}</p>

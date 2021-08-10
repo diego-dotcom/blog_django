@@ -13,19 +13,25 @@
 
 <body>
     <div class="page-header">
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_nuevo' %}" class="top-menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+            </svg></a>
+        {% endif %}
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
 
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <div class="post">
 
-                    {% block content %}
 
-                    {% endblock %}
+                {% block content %}
 
-                </div>
+                {% endblock %}
+
+
 
 
             </div>
